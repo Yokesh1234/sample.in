@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slam Book</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Slam Book</h1>
+    <form id="Form">
+      <label for="fname"> First Name:</label>
+      <input type="text" id="fname" required>
+
+      <label for="sname"> Second Name:</label>
+      <input type="text" id="sname" required>
+
+      <label for="uname">User Name:</label>
+      <input type="text" id="uname" required>
+
+      <label for="pass">Password:</label>
+      <input type="text" id="pass" required>
+
+      <label for="cpass"> Conform Password:</label>
+      <input type="text" id="cpass" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('Form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Fetch the form values
+      var fname = document.getElementById('fname').value;
+      var sname = document.getElementById('sname').value;
+      var uname = document.getElementById('uname').value;
+      var pass = document.getElementById('pass').value;
+      var cpass = document.getElementById('cpass').value;
+
+      // Create an object to store the form data
+      var form = {
+        fname: fname,
+        sname: sname,
+        uname: uname,
+        pass: pass,
+        cpass:cpass
+      };
+
+      if (pass===cpass)
+      {
+        alert("ass")
+      }
+
+      // TODO: Send slamData object to the backend or store it in the database
+
+      // Reset the form after submission
+      document.getElementById('Form').reset();
+    });
+  </script>
+</body>
+</html>
